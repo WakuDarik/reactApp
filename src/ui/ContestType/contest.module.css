@@ -1,0 +1,42 @@
+.titleWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 20px;
+}
+
+.titleWrap .h4, .titleWrap .h6 {
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+.card {
+    min-height: 311px;
+    height: 100%;
+    border: 1px solid #2CB9B7;
+    transition: all .2s linear;
+    max-width: 25%;
+    display: flex;
+}
+
+.uAvatar {
+    width: 3.125rem;
+    height: 3.125rem;
+}
+
+.categoryWrap {
+    display: flex;
+    float: 1 1 wrap;
+    flex-wrap: wrap;
+}
+
+.cardBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgFluid {
+    width: 100%;
+}
