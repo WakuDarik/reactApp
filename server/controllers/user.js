@@ -147,6 +147,19 @@ module.exports = {
         try {
             const { card, cvv, price, pcg } = req.body.data
             transaction = await sequelize.transaction();
+
+            const cartCreateOrSelect = await Card.findOrCreate(
+                {
+                    where: { card: card, cvv: cvv, userId: req.id },
+                    transaction
+                }
+            ).spread(function (card, created) {
+                console.log(card.get({
+                    plain: true
+                }))
+                console.log(created)
+            })
+
             const manyTransfer = await Card.update(
                 {
                     balance: sequelize.literal(`balance - ${price}`),
